@@ -1,5 +1,5 @@
 
-//2. Validate login form: email standard format, email and password required
+//2. Validate login form: standard email format, email and password required
 
 let email = document.getElementById("inputEmail");
 let pass = document.getElementById("inputPassword");
