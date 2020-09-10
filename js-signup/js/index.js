@@ -1,75 +1,103 @@
 //3. Validate signup form: standard email and password format, password repetition, province selection
 
-let email = document.getElementById("inputEmail");
-let pass = document.getElementById("inputPassword");
-let pass2 = document.getElementById("inputPassword-2");
-let prov = document.getElementById("inputProvincia");
-let emailValid=false;
-let passValid=false;
-let pass2Valid=false;
-let provValid=false;
+let email = document.querySelector("#inputEmail")
+let pass = document.querySelector("#inputPassword");
+let pass2 = document.querySelector("#inputPassword-2");
+let prov = document.querySelector("#inputProvincia");
+let isEmailValid = false;
+let isPassValid = false;
+let isPass2Valid = false;
+let isProvValid = false;
 const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const passFormat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
+//Functions
 
 //Email validation
-email.oninput= function validateEmail(){
+
+function validateEmail() {
     let emailValue = email.value;
     if (emailValue.match(mailFormat)) {
-        email.className="form-control is-valid";
-        emailValid=true;
-    }else{
-        email.className="form-control is-invalid";
-        emailValid=false; 
+      email.className = "form-control is-valid";
+      isEmailValid = true;
+      //console.log("emailok");
+
+    } else {
+      email.className = "form-control is-invalid";
+      isEmailValid = false;
+      //console.log("emailerror");
+
     }
-}
+  };
 
 //Password 1 validation
-pass.oninput= function validatePassword(){
-    let passValue = pass.value;
-    if (passValue.match(passFormat)) {
-        pass.className="form-control is-valid";
-        passValid=true;
-    }else{
-        pass.className="form-control is-invalid";
-        passValid=false; 
-    }
+
+function validatePassword() {
+let passValue = pass.value;
+if (passValue.match(passFormat)) {
+    pass.className = "form-control is-valid";
+    isPassValid = true;
+    //console.log("passok");
+} else {
+    pass.className = "form-control is-invalid";
+    isPassValid = false;
+    //console.log("passerror");
 }
+};
+
 //Password 2 validation (has to match password 1)
-pass2.oninput= function validatePassword2(){
+
+  function validatePassword2() {
     let pass2Value = pass2.value;
-    if (pass2Value.match(pass.value)&&passValid==true) {
-        pass2.className="form-control is-valid";
-        pass2Valid=true;
-    }else{
-        pass2.className="form-control is-invalid";
-        pass2Valid=false; 
+    if (pass2Value.match(pass.value) && isPassValid == true) {
+      pass2.className = "form-control is-valid";
+      isPass2Valid = true;
+      //console.log("pass2ok");
+    } else {
+      pass2.className = "form-control is-invalid";
+      isPass2Valid = false;
+      //console.log("pass2error");
     }
-}
+};
 
 //Province validation (can't be empty)
-prov.onchange= function validateProvince(){
-    let provValue = prov.value;
-    if (provValue!="") {
-        prov.className="browser-default custom-select is-valid";
-        provValid=true;
-    }else{
-        prov.className="browser-default custom-select is-invalid";
-        provValid=false; 
-    }
+
+function validateProvince() {
+let provValue = prov.value;
+if (provValue != "") {
+    prov.className = "browser-default custom-select is-valid";
+    isProvValid = true;
+    //console.log("provok");
+} else {
+    prov.className = "browser-default custom-select is-invalid";
+    isProvValid = false;
+    //console.log("proverror");
 }
+};
 
 
+//EventListeners
 
-//Onsubmit validation - only if email and password are valid!
+email.addEventListener("input", validateEmail);
+pass.addEventListener("input", validatePassword);
+pass2.addEventListener("input", validatePassword2);
+prov.addEventListener("click", validateProvince);
+
+//Onsubmit validation - only if all are valid, if not, show errors
+
 function validateSignup() {
-    if(emailValid==true&&passValid==true&&pass2Valid==true&&provValid==true){
-        return true;
-    }else{
-        // validateEmail();
-        // validatePassword();
-        // validatePassword2();
-        // validateProvince();
-        return false;
-    }
- };
+  if (
+    isEmailValid == true &&
+    isPassValid == true &&
+    isPass2Valid == true &&
+    isProvValid == true
+  ) {
+    return true;
+  } else {
+      validateEmail();
+      validatePassword();
+      validatePassword2();
+      validateProvince();
+    return false;
+  }
+}
