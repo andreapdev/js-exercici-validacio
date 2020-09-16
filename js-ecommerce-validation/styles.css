@@ -1,0 +1,188 @@
+/* COLOR PALETTE
+#f4f6ff
+#ffcb74
+#ea907a
+#4f8a8b
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+
+/* FONT SIZES*/
+h1{
+    font-size: max(8vw, 40px);
+}
+h2{
+    font-size: max(3vw, 28px);
+}
+h3{
+    font-size: max(2vw, 22px);
+}
+h4{
+    font-size: max(2vw, 20px);
+}
+
+p{
+    font-size: max(1.5vw, 14px);
+}
+.foot-copyright{
+    font-size: max(1vw, 14px);
+}
+
+/*UNSTYLING LISTS AND LINKS*/
+li{
+    list-style: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+
+/*BODY*/
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to top, #ffcc74 0%, #ffcc74a2 100%);
+}
+
+/*HEADER*/
+    header{
+        background-color: #4f8a8b;
+    }
+        #header-row{
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+            .fa-bars{
+                color: #ffcb74;
+            }
+            #header-logo{
+                height: 6vw;
+                width:auto;
+            }
+            #header-title{
+                font-family: 'Poiret One', cursive;
+                color:#ffcb74;
+            }
+            #header-profile, #header-basket{
+                color:#ffcb74;
+                font-size: max(3vw, 16px);
+            }
+            #header-profile:hover, #header-basket:hover{
+                font-size: max(3.3vw, 18px);
+            }
+        #search-form{
+            justify-content: center;
+        }
+            #search-bar, #search-input{
+                background-color: #f4f6ff;
+            }
+            #search-btn{
+                color: #ea907a;
+                
+            }
+
+/*NAV*/
+    #header-navbar{
+        background-color: #4f8a8b;
+    }
+        #header-navbar-ul{
+            justify-content: space-around;
+            text-align: center;
+            font-size: max(1.8vw, 18px);
+        }
+            .nav-item:hover{
+                background-color: #5b9d9e
+            }
+                .nav-link{
+                    color: #f4f6ff;
+                }
+                    .nav-link:hover{
+                        color: #ffcb74;
+                    }
+    
+/*MAIN*/
+    #section-1, #section-2, #section-3{
+        background-color: #f4f6ff;
+    }
+        .section-title{
+            color: #5b9d9e;
+        }
+        .section-title:hover{
+            color: #4f8a8b;
+            font-weight: bolder;
+        }
+        article{
+            background-color: #f4f6ff;
+            text-align: center;
+        }
+        article:hover{
+            background-color: #97a7a738;
+        }
+
+        .btn-add{
+            background-color: #4f8a8b;
+            color: #f4f6ff;
+        }
+
+/*FOOTER*/
+    footer{
+        background-color: #4f8a8b;
+    }
+    footer p{
+        margin-bottom: 0;
+    }
+        #foot-newsletter{
+            background-color: #5b9d9e;
+            justify-content: center;
+            text-align: center;
+        }
+            .btn-newsletter{
+                background-color: #ea907a;
+                color: #f4f6ff;
+            }
+            .btn-newsletter:hover{
+                background-color: #eb7355;
+                color: #f4f6ff;
+            }
+        #footer-logo{
+            max-height:60px;
+            width:auto;    
+        }
+        .foot-nav, .foot-social, .foot-copyright{
+            justify-content: center;
+            text-align: center;
+        }
+            .foot-twitter, .foot-fb, .foot-link{
+                color: #f4f6ff;
+                text-align: center;
+            }
+                .foot-twitter:hover, .foot-fb:hover, .foot-copyright:hover{
+                    color: #ffcb74;
+                }
+
+/*PROFILE.HTML*/
+
+#col-login, #col-signup{
+    background-color: #f4f6ff;
+}
+
+#btn-sendLogin, #btn-sendSignup{
+    background-color: #ea907a;
+    color: #f4f6ff;
+}
+#btn-sendLogin:hover, #btn-sendSignup:hover{
+    background-color: #eb7355;
+}
+
+#btn-goToSignup, #btn-goToLogin{
+    background-color: #4f8a8b;
+            color: #f4f6ff;
+}
+
+#btn-goToSignup:hover, #btn-goToLogin:hover{
+    background-color: #1f7779;
+}
+
